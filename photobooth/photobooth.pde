@@ -68,7 +68,6 @@ void draw () {
 void mouseClicked() {
   
   if (buttonStart.mouseOverButton && initPage) {
-    println("init page");
     initPage = false;
     filterPage = true;
   }

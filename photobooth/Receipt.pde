@@ -21,7 +21,7 @@ class Receipt extends PApplet {
     windowTitle("Receipt");    
     textMode(SHAPE);
     String[] fontList = PFont.list();
-    printArray(fontList);
+    // printArray(fontList);
     PFont monospace, handwritten, jeanLuc;
     monospace = createFont("Space Mono Regular", 48);
     handwritten = createFont("Reenie Beanie", 48);
@@ -48,7 +48,7 @@ class Receipt extends PApplet {
     textAlign(LEFT, CENTER);
     textFont(monospace, 16);
     String currentDate = String.valueOf(day()) + "/" + String.valueOf(month()) + "/" + String.valueOf(year());
-    println(currentDate);
+    // println(currentDate);
     String info = String.format("******* ART EXHIBITION ******* \n\nDate: %s \nAddress: Galeria R/C DARQ \n\n******************************", currentDate);
     float infoTopMargin = titleTopMargin + 45;
     box = textWidth(info);
