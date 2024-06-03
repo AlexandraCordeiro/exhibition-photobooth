@@ -10,7 +10,7 @@ class Receipt extends PApplet {
   
   public void settings() {
     // outpult folder
-    String outputFolder = "C:\\Users\\Alexandra\\Documents\\MDM\\2o semestre\\odm\\photobooth\\outputs\\";
+    String outputFolder = "C:\\Users\\Alexandra\\Documents\\MDM\\2o semestre\\odm\\exhibition-photobooth\\photobooth\\outputs\\";
     String outputDir = String.format("%sreceipt-%dh%dm.pdf", outputFolder, hour(), minute());
     size(400, 2000 , PDF, outputDir);
     smooth();
@@ -72,14 +72,14 @@ class Receipt extends PApplet {
     // load photobooth pictures
     
     // data folder
-    String folderDir = "C:\\Users\\Alexandra\\Documents\\MDM\\2o semestre\\odm\\photobooth\\data\\";
+    String folderDir = "C:\\Users\\Alexandra\\Documents\\MDM\\2o semestre\\odm\\exhibition-photobooth\\photobooth\\data\\";
     float picTopMargin = quoteTopMargin + box*0.9;
     
     float newImgWidth = 0;
     float newImgHeight = 0;
     
     for (int i = 0; i < numPhotos; i++) {
-      String imgDir = String.format("%spicture-%d.jpg", folderDir, i + 1);
+      String imgDir = String.format("%spicture-%d.jpg", folderDir, i);
       PImage img = loadImage(imgDir);
       newImgWidth = img.width/4;
       newImgHeight= img.height/4;
@@ -96,8 +96,9 @@ class Receipt extends PApplet {
     
     // FINAL SUM
     textFont(monospace, 16);
-    text(String.format("------------------------------\nITEM COUNT                   3\nTOTAL                THANK YOU\n------------------------------"), w*0.5-box*0.5, picTopMargin + box/4 ,box, box/4);
-    
+    text(String.format("------------------------------\nITEM COUNT                   3\nTOTAL                THANK YOU\n------------------------------\n"), w*0.5-box*0.5, picTopMargin + box/4 ,box, box/4);
+    textAlign(CENTER, CENTER);
+    text("See you next time! :)", w*0.5-box*0.5, picTopMargin + box/10 ,box, box/4);
     
     PImage codeBar = loadImage(String.format("%scode-bar.png", folderDir));
     image(codeBar, w*.5 - (codeBar.width*.5), h - (codeBar.height));
